@@ -1,0 +1,19 @@
+query appList($clientId: BigInt!) {
+    applicationList(
+        filter:{
+            clientId:{
+                conditions:{
+                    condition:eq
+                    value: $clientId
+                }
+            }
+        }
+    ) {
+        items{
+            m_cl_full_name
+        }
+        pageInfo{
+            totalItems
+        }
+    }
+}
